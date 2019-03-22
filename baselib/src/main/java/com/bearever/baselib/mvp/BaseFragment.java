@@ -1,4 +1,4 @@
-package com.bearever.baselib.base;
+package com.bearever.baselib.mvp;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
  * 基类fragment
  * created by JiangHua on 2019/2/26
  */
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements BaseView {
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements BaseContact.View {
     public Context mContext;
 
     protected View mRootView;

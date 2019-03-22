@@ -1,4 +1,4 @@
-package com.bearever.baselib.base;
+package com.bearever.baselib.mvp;
 
 import android.content.Context;
 
@@ -12,7 +12,7 @@ import java.lang.ref.WeakReference;
  * 在这里会给view 和model解耦
  * created by JiangHua on 2019/2/25
  */
-public abstract  class BasePresenter<T,E> {
+public abstract class BasePresenter<T extends BaseContact.View, E extends BaseContact.Model> {
     public Context mContext;
     public T mView;
     public E mModel;

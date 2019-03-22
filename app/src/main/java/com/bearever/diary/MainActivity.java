@@ -1,4 +1,4 @@
-package cn.bearever.diary;
+package com.bearever.diary;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

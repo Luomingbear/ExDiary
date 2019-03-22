@@ -1,4 +1,4 @@
-package com.bearever.baselib.base;
+package com.bearever.baselib.mvp;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -25,7 +25,7 @@ import java.lang.ref.WeakReference;
 /**
  * created by JiangHua on 2019/2/25
  */
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements BaseView {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements BaseContact.View {
 
     public boolean destroyed = false;
 
