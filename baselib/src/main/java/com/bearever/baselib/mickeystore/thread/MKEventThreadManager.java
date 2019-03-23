@@ -6,7 +6,7 @@ import com.bearever.baselib.mickeystore.db.MKDatabase;
 import com.bearever.baselib.mickeystore.db.MKDbManager;
 import com.bearever.baselib.mickeystore.info.MickeyCallbackInfo;
 import com.bearever.baselib.mickeystore.info.OnMickeyStoreListener;
-import com.bearever.util.UriSerializer;
+import com.bearever.baselib.util.UriSerializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;

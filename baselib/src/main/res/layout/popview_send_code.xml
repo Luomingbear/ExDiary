@@ -73,7 +73,7 @@
                 android:textSize="15dp"
                 android:visibility="visible" />
 
-            <com.bearever.weight.TimeButton
+            <com.bearever.baselib.ui.TimeButton
                 android:id="@+id/time_btn"
                 android:layout_width="96dp"
                 android:layout_height="28dp"

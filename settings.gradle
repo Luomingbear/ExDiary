@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':diarybase'
+include ':app', ':baselib', ':diarybase', ':login'
