@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dy_color_white">#fff</color>
+    <color name="dy_color_9">#999999</color>
+    <color name="dy_color_6">#666666</color>
+    <color name="dy_color_black">#111</color>
+
+    <color name="dy_color_background">#EEEEEE</color>
+    <color name="dy_color_line">#F1F1F1</color>
+</resources>

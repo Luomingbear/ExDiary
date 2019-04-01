@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.bearever.bean.DiaryItemDO;
 import com.bearever.diary.R;
+import com.bearever.diarybase.util.TimeUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
@@ -21,6 +22,7 @@ public class MyDiaryAdapter extends BaseQuickAdapter<DiaryItemDO, BaseViewHolder
 
     @Override
     protected void convert(BaseViewHolder helper, DiaryItemDO item) {
-        // TODO: 2019/3/23 设置日记的数据
+        helper.setText(R.id.tv_time, TimeUtils.getDiaryTime(item.getTime()));
+        helper.setText(R.id.tv_content, item.getContent());
     }
 }

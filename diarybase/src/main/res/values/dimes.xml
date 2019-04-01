@@ -3,4 +3,7 @@
     <dimen name="dy_padding_10">10dp</dimen>
     <dimen name="dy_padding_12">12dp</dimen>
     <dimen name="dy_padding_15">15dp</dimen>
+
+    <dimen name="dy_title_height">50dp</dimen>
+
 </resources>
