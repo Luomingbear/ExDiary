@@ -4,4 +4,5 @@
     <style name="DiaryAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/dy_color_background</item>
     </style>
+
 </resources>

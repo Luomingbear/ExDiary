@@ -8,4 +8,6 @@ package com.bearever.diarybase.constant;
 public class DyConstants {
     public static final boolean DEBUG = true; //网络超时
     public static final int TIME_OUT = 30000; //超时时间
+    public static final String MATISSE_FILE_PROVIDER = "com.bearever.diary.fileprovider"; //fileprovider
+
 }

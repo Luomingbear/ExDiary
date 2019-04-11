@@ -16,3 +16,6 @@
 #okio
 -dontwarn okio.**
 -keep class okio.**{*;}
+
+#glide
+-dontwarn com.bumptech.glide.**

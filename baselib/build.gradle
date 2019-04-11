@@ -32,4 +32,5 @@ dependencies {
     annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
     api "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
     implementation "com.android.support.constraint:constraint-layout:${CONSTRAIT_SUPPORT_VERSION}"
+    api project(":matisse")
 }
