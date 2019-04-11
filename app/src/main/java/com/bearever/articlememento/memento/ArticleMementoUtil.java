@@ -56,4 +56,12 @@ public class ArticleMementoUtil {
         return mArticleCaretaker.redo();
     }
 
+    /**
+     * 记录的步数
+     * @return
+     */
+    public int length(){
+        return mArticleCaretaker.length();
+    }
+
 }

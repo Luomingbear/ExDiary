@@ -23,7 +23,8 @@ public class MyDiaryPresenter extends BasePresenter<MyDiaryContact.View, MyDiary
     @Override
     public void refresh() {
         page = 0;
-        mModel.getDiaryFromNet(page, new EventCallBack() {
+        //获取本地记录
+        mModel.getDiaryFromLocal(page, new EventCallBack() {
             @Override
             public void onSuccess(Object o) {
                 HttpMyDiaryDO result = (HttpMyDiaryDO) o;
@@ -35,16 +36,30 @@ public class MyDiaryPresenter extends BasePresenter<MyDiaryContact.View, MyDiary
                 ToastHelper.showToast(mContext, msg);
             }
         });
+
+//获取网络记录
+//        mModel.getDiaryFromNet(page, new EventCallBack() {
+//            @Override
+//            public void onSuccess(Object o) {
+//                HttpMyDiaryDO result = (HttpMyDiaryDO) o;
+//                mView.showDiary(result.getContent(), result.isHasNext());
+//            }
+//
+//            @Override
+//            public void onFail(String msg) {
+//                ToastHelper.showToast(mContext, msg);
+//            }
+//        });
     }
 
     @Override
     public void loadMore() {
         page++;
-        mModel.getDiaryFromNet(page, new EventCallBack() {
+        mModel.getDiaryFromLocal(page, new EventCallBack() {
             @Override
             public void onSuccess(Object o) {
                 HttpMyDiaryDO result = (HttpMyDiaryDO) o;
-                mView.showDiary(result.getContent(), result.isHasNext());
+                mView.showMoreDiary(result.getContent(), result.isHasNext());
             }
 
             @Override

@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -31,7 +32,7 @@ public class MKEventThreadManager {
                 .registerTypeAdapter(Uri.class, new UriSerializer())
                 .create();
         mThreadPoolExecutor = new ThreadPoolExecutor(1, 1000,
-                1, TimeUnit.SECONDS, new LinkedBlockingDeque<Runnable>(),
+                1, TimeUnit.SECONDS, new ArrayBlockingQueue<>(1000),
                 Executors.defaultThreadFactory(), new ThreadPoolExecutor.DiscardPolicy());
     }
 

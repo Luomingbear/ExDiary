@@ -3,7 +3,10 @@ package com.bearever;
 import android.app.Application;
 
 import com.bearever.baselib.http.LogInterceptor;
+import com.bearever.baselib.mickeystore.MickeyStore;
 import com.bearever.diarybase.constant.DyConstants;
+import com.bearever.diarybase.database.DiaryDBManager;
+import com.bearever.diarybase.database.sql.DiaryDB;
 import com.lzy.okgo.OkGo;
 
 import java.util.concurrent.TimeUnit;
@@ -20,6 +23,7 @@ public class DiaryApplication extends Application {
         super.onCreate();
 
         initHttp();
+        initDatabase();
     }
 
     private void initHttp() {
@@ -37,5 +41,10 @@ public class DiaryApplication extends Application {
             builder.addInterceptor(logInterceptor);
         }
         OkGo.getInstance().init(this).setOkHttpClient(builder.build());
+    }
+
+    private void initDatabase() {
+        MickeyStore.getInstance().init(this);
+        DiaryDBManager.getInstance().init(this);
     }
 }

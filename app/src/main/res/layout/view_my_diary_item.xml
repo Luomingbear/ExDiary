@@ -20,5 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_time"
         android:layout_marginTop="@dimen/dy_padding_10"
+        android:ellipsize="end"
+        android:maxLines="3"
         android:textColor="@color/dy_color_black" />
 </RelativeLayout>

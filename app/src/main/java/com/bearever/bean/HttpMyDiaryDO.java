@@ -1,5 +1,8 @@
 package com.bearever.bean;
 
+import com.bearever.diarybase.database.sql.DiaryDB;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,5 +28,25 @@ public class HttpMyDiaryDO {
 
     public void setHasNext(boolean hasNext) {
         this.hasNext = hasNext;
+    }
+
+    public static HttpMyDiaryDO from(List<DiaryDB.DiaryDatabaseDO> results) {
+        if (results == null) {
+            return null;
+        }
+        List<DiaryItemDO> list = new ArrayList<>();
+        for (DiaryDB.DiaryDatabaseDO item : results) {
+            DiaryItemDO diaryItemDO = new DiaryItemDO();
+            diaryItemDO.setDid(item.getDid());
+            diaryItemDO.setContent(item.getContent());
+            diaryItemDO.setTime(item.getTime());
+            diaryItemDO.setTitle(item.getTittle());
+            diaryItemDO.setExchange(item.isExchange());
+            list.add(diaryItemDO);
+        }
+        HttpMyDiaryDO httpMyDiaryDO = new HttpMyDiaryDO();
+        httpMyDiaryDO.setContent(list);
+        httpMyDiaryDO.setHasNext(!results.isEmpty());
+        return httpMyDiaryDO;
     }
 }

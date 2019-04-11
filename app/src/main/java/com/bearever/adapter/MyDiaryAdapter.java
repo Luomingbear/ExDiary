@@ -23,6 +23,6 @@ public class MyDiaryAdapter extends BaseQuickAdapter<DiaryItemDO, BaseViewHolder
     @Override
     protected void convert(BaseViewHolder helper, DiaryItemDO item) {
         helper.setText(R.id.tv_time, TimeUtils.getDiaryTime(item.getTime()));
-        helper.setText(R.id.tv_content, item.getContent());
+        helper.setText(R.id.tv_content, item.getTitle());
     }
 }

@@ -26,11 +26,12 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api "com.android.support:appcompat-v7:${V7_APPCOMPAT_VERSION}"
     api "com.android.support:recyclerview-v7:${RECYCLER_VIEW_SUPPORT_VERSION}"
+    api "com.android.support.constraint:constraint-layout:${CONSTRAIT_SUPPORT_VERSION}"
     api "com.google.code.gson:gson:${GSON_VERSION}"
     api "com.github.bumptech.glide:okhttp3-integration:${GLIDE_VERSION}"
     api "com.github.bumptech.glide:glide:${GLIDE_VERSION}"
-    annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
-    api "jp.wasabeef:glide-transformations:${GLIDE_TRANSFORMATIONS_VERSION}"
-    implementation "com.android.support.constraint:constraint-layout:${CONSTRAIT_SUPPORT_VERSION}"
+    //AppGlideModule 的依赖项
+//    annotationProcessor "com.github.bumptech.glide:compiler:${GLIDE_VERSION}"
     api project(":matisse")
+    api "org.greenrobot:eventbus:${EVENT_BUS_VERSION}"
 }

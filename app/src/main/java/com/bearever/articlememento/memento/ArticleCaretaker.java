@@ -79,4 +79,13 @@ public class ArticleCaretaker {
         index = Math.min(mMementoList.size() - 1, index + 1);
         return mMementoList.get(index);
     }
+
+    /**
+     * 备忘录的步数
+     *
+     * @return
+     */
+    public int length() {
+        return mMementoList.size();
+    }
 }

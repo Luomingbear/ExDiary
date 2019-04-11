@@ -16,6 +16,7 @@ import com.bearever.articlememento.model.Section;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +35,8 @@ public class RichTextEditor extends ScrollView implements RichTextEditorInterfac
     private int mIndex = 1; //段落index标识
     private int mFocusIndex = 0; //当前焦点的段落index
     private boolean isSetRichText = false; //是否正在填充富文本内容；适用于外部使用section列表或者section的json字符串设置内容的时候
-    private String CLASS_TEXT_SECTION_DECORATOR = "com.bearever.articlememento.decorator.TextSectionDecorator";
-    private String CLASS_IMAGE_SECTION_DECORATOR = "com.bearever.articlememento.decorator.ImageSectionDecorator";
+    public static String CLASS_TEXT_SECTION_DECORATOR = "com.bearever.articlememento.decorator.TextSectionDecorator";
+    public static String CLASS_IMAGE_SECTION_DECORATOR = "com.bearever.articlememento.decorator.ImageSectionDecorator";
 
     public RichTextEditor(Context context) {
         super(context);
@@ -164,7 +165,13 @@ public class RichTextEditor extends ScrollView implements RichTextEditorInterfac
             List<Section> list = new ArrayList<>();
             if (jsonArray.length() > 0) {
                 for (int i = 0; i < jsonArray.length(); i++) {
-                    Section section = (Section) jsonArray.get(i);
+                    JSONObject obj = (JSONObject) jsonArray.get(i);
+                    Section section = new Section();
+                    section.setStyle(obj.getInt("style"));
+                    section.setContent(obj.getString("content"));
+                    section.setDecorator(obj.getString("decorator"));
+                    section.setGravity(obj.getInt("gravity"));
+                    section.setSelection(obj.getInt("selection"));
                     list.add(section);
                 }
             }

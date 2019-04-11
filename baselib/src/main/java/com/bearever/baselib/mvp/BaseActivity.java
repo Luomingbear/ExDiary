@@ -53,9 +53,11 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         rootView.getViewTreeObserver().addOnGlobalLayoutListener(globalLayoutListener);
 
         initView();
+        initData();
         initPresenter();
         initListener();
     }
+
 
     private int rootViewVisibleHeight = 0; //根布局的高度
     ViewTreeObserver.OnGlobalLayoutListener globalLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -302,6 +304,11 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
      * 初始化view
      */
     protected abstract void initView();
+
+    /**
+     * 初始化数据
+     */
+    protected abstract void initData();
 
     /**
      * 初始化控制逻辑
